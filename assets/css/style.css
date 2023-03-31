@@ -1,5 +1,48 @@
 :root {
-    -bg--sfondoTop: #009688;
-    -bg--sfondoBottom: #dbdbd2;
-    -bg--sideTop: #8edafc;
+    --bg--sfondoTop: #009688;
+    --bg--sfondoBottom: #dbdbd2;
+    --bg--sideTop: #8edafc;
 }
+
+
+header  {
+    height: 60px;
+    /* Debug */
+    background-color: lightgrey;
+}
+
+.bar_top {
+    height: calc(100vh - 70px);
+    display: flex;
+    /* Debug */
+    background-color: #009688;
+}
+
+.bar_top>.sidebar {
+    width: 35%;
+    overflow: hidden;
+    background-color: var();
+    justify-content: space-between;
+    /* Debug */
+}
+
+.bar_top .sidebar_top {
+    height: 60px;
+    background-color: var(--bg--sideTop);
+}
+
+.bar_top .sidebar_bottom {
+    height: calc(100% - 60px);
+    overflow-y: auto;
+    /* Debug */
+    background-color: yellow;
+
+}
+
+
+
+/* .bar_top > .content {
+    width: calc(100% - 70px);
+    overflow-y: auto;
+    background-color: red;
+} */
