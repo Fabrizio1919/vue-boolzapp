@@ -12,18 +12,62 @@ body {
         var(--bg--sfondoBottom )15% 
     )
 }
-
-header  {
+/* HEADER */
+.header  {
     height: 60px;
-    /* Debug */
     background-color:var(--bg--headerBar);
+    border-right: 1px solid rgb(106, 106, 106);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.profile-img img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+.text-smal{
+    font-size: 14px;
+    color: rgb(126, 124, 124);
+}
+.text-smaller{
+    font-size: 12px;
+    color: rgb(126, 124, 124);
+}
+.header{
+    background-color: rgb(228, 228, 228);
+    border-right: 1px solid rgb(106, 106, 106);
+    height: 65px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+.header .profile-img{
+    height: 50px;
+    width: 50px;
+}
+.header .user-name{
+    flex-grow: 1;
+    padding: 0 10px;
 }
 
+.header .icons{
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    color: rgb(100, 100, 100);
+    padding: 10px;
+}
+/* END -------HEADER----- */
+
+/* SIDEBAR */
 .bar_top {
     height: calc(100vh - 70px);
     display: flex;
-    /* Debug */
-   /*  background-color: #009688; */
 }
 
 .bar_top>.sidebar {
@@ -31,7 +75,7 @@ header  {
     overflow: hidden;
     background-color: var();
     justify-content: space-between;
-    /* Debug */
+    
 }
 
 .bar_top .sidebar_top {
@@ -74,4 +118,17 @@ header  {
     justify-content: center;
     align-items: center;
     font-size: 25px;
-} */
+} 
+/* SEARCH BAR  */
+.searchBar{
+    background-color: #fafafa;
+    padding: 10px;
+}
+.searchBar #searchUser{
+    width: 100%;
+    font-size: 13px;
+    padding: 3px;
+    border: 0.3px solid rgb(214, 214, 214);
+    border-radius: 6px;
+}
+/* ---------END SIDEBAR-------- */
