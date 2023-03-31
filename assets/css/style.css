@@ -2,6 +2,7 @@
     --bg--sfondoTop: #009688;
     --bg--sfondoBottom: #dbdbd2;
     --bg--sideTop: #8edafc;
+    --bg--headerBar: #eaeaea;
 }
 body {
     height: 100vh;
@@ -15,14 +16,14 @@ body {
 header  {
     height: 60px;
     /* Debug */
-    background-color: lightgrey;
+    background-color:var(--bg--headerBar);
 }
 
 .bar_top {
     height: calc(100vh - 70px);
     display: flex;
     /* Debug */
-    background-color: #009688;
+   /*  background-color: #009688; */
 }
 
 .bar_top>.sidebar {
@@ -49,6 +50,6 @@ header  {
  .bar_top > .content {
     width: calc(100% - 70px);
     overflow-y: auto;
-    /* Debug */
-    background-color: red;
+    background-image: url(../img/mine.jpg);
+    
 } 
