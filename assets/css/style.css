@@ -4,6 +4,11 @@
     --bg--sideTop: #8edafc;
     --bg--headerBar: #eaeaea;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     height: 100vh;
     background:linear-gradient(
@@ -104,6 +109,9 @@ body {
    height: 50px;
    width: 50px;
 }
+.user:hover {
+    background-color: lightgrey;
+}
 /* ----END SIDER BOTTOM---- */
 
 
@@ -111,7 +119,7 @@ body {
     width: calc(100% - 70px);
     overflow-y: auto;
     background-image: url(../img/mine.jpg);
-    
+    position: relative; 
 } 
 
 /* Sidebar TOP */
@@ -148,3 +156,46 @@ body {
     border-radius: 6px;
 }
 /* ---------END SIDEBAR-------- */
+
+.chats .messageChats{
+    padding: 20px;
+    margin: 3px;
+    display: flex;
+}
+
+.chats .message-body{
+    display: inline-block;
+    background-color: white;
+    padding: 6px;
+    border-radius: 10px;
+    width: 13rem;
+    max-width: 500px;
+    overflow-wrap: break-word;
+}
+
+.chats .message-body .message-data{
+    text-align: right;
+ }
+ 
+
+/* FOOTER */
+.footer{
+    background-color: #f3eeea;
+    padding: 15px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.footer input{
+    height: 40px;
+    font-size: 14px;
+    flex-grow: 1;
+    padding: 13px 5px;
+    border: .3px solid rgb(224, 224, 224);
+    border-radius: 8px;
+}
