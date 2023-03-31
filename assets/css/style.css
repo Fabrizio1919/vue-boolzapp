@@ -3,7 +3,14 @@
     --bg--sfondoBottom: #dbdbd2;
     --bg--sideTop: #8edafc;
 }
-
+body {
+    height: 100vh;
+    background:linear-gradient(
+        to bottom, 
+        var(--bg--sfondoTop)15%,
+        var(--bg--sfondoBottom )15% 
+    )
+}
 
 header  {
     height: 60px;
@@ -39,10 +46,9 @@ header  {
 
 }
 
-
-
-/* .bar_top > .content {
+ .bar_top > .content {
     width: calc(100% - 70px);
     overflow-y: auto;
+    /* Debug */
     background-color: red;
-} */
+} 
