@@ -27,7 +27,7 @@ header  {
 }
 
 .bar_top>.sidebar {
-    width: 35%;
+    width: 50%;
     overflow: hidden;
     background-color: var();
     justify-content: space-between;
@@ -53,3 +53,25 @@ header  {
     background-image: url(../img/mine.jpg);
     
 } 
+
+/* Sidebar TOP */
+ .notifyAlert{
+    background-color: rgb(147, 201, 232);
+     height: 60px; 
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 17px;
+}
+.notifyIcon{
+    background-color: rgb(255, 255, 255);
+    color: rgb(147, 201, 232);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+} */
