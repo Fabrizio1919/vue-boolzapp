@@ -38,7 +38,7 @@
                         <!-- ./icons -->
                     </div>
                     <!-- ./header -->
-                    
+
                     <div class="sidebar_top">
                         <div class="notifyAlert">
                             <div class="notifyIcon"><i class="fa-solid fa-bell-slash"></i></div>
@@ -53,17 +53,36 @@
                     <!-- ./sider_top -->
 
                     <div class="searchBar">
-                        <input type="text" name="searchUser" id="searchUser" placeholder="Cerca o inizia una nuova chat" style="font-family:Arial, FontAwesome;">
+                        <input type="text" name="searchUser" id="searchUser" placeholder="Cerca o inizia una nuova chat"
+                            style="font-family:Arial, FontAwesome;">
                     </div>
                     <!-- /.searchBar -->
 
-                    <div class="sidebar_bottom"></div>
+                    <div class="sidebar_bottom">
+                        <div class="userList">
+                            <div class="user" v-for="(contact,index) in contacts">
+                                <div class="profile-img">
+                                    <img :src="contact.avatar" alt="">
+                                </div>
+                                <!-- ./profile-img -->
+                                <div class="name-msg">
+                                    <div class="name-user">{{contact.name}}</div>
+                                    <div class="last msg text-smal">{{contact.message}}</div>
+                                </div>
+                                <!-- ./name-msg -->
+                                <div class="info text-smal">12.00</div>
+                            </div>
+                            <!-- ./user -->
+                        </div>
+                        <!-- ./user.list -->
+                    </div>
                 </div>
-                <main class="content">
-
-                </main>
             </div>
+            <main class="content">
+
+            </main>
         </div>
+    </div>
 
 
 
