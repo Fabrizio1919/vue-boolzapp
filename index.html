@@ -60,7 +60,7 @@
 
                     <div class="sidebar_bottom">
                         <div class="userList">
-                            <div class="user" :class="index === activeContact ? 'active' : ''" v-for="(contact,index) in contacts">
+                            <div class="user" :class="activeVerify(index)" v-for="(contact,index) in contacts">
                                 <div class="profile-img">
                                     <img :src="contact.avatar" alt="">
                                 </div>
@@ -77,7 +77,7 @@
                         <!-- ./user.list -->
                     </div>
                 </div>
-                <div class="content" v-for="(user,index) in contacts">
+                <div class="content" v-for="(user,index) in contacts" :class="activeVerify(index)">
                     <div class="header">
                         <div class="profile-img">
                             <img src="./assets/img/avatar_1.jpg" alt="myImg">

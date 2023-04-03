@@ -168,6 +168,25 @@ createApp({
                 }
             ]
         }
+    },
+    methods: {
+        activeVerify(index) {
+            if (index === this.activeContact) {
+              return ('active');
+            }
+          },
+          selectUser(index) { this.activeContact = index },
+          sendMessage(index){
+            let newMessage ={
+              date: this.date,
+              message: this.message,
+              status: 'sent'
+            }
+            this.contacts[index].messages.push(newMessage);
+            this.newMessage = ''
+          },
+          
     }
+    
 }).mount('#app')
 
