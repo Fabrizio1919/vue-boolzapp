@@ -106,7 +106,7 @@
                         <div class="item-smile">
                             <i class="fa-regular fa-face-smile fa-2x"></i>
                         </div>
-                        <input type="text" placeholder="Scrivi un messaggio" name="message" id="message">
+                        <input type="text" placeholder="Scrivi un messaggio" name="message" id="message" v-model="newMessage" @keyup.enter="sendMessage(index),autoMessage(index)">
                         <div class="item-microphone">
                             <i class="fa-solid fa-microphone fa-2x"></i>
                         </div>

@@ -178,15 +178,28 @@ createApp({
           selectUser(index) { this.activeContact = index },
           sendMessage(index){
             let newMessage ={
-              date: this.date,
-              message: this.message,
+              date: this.dateNow,
+              message: this.newMessage,
               status: 'sent'
             }
             this.contacts[index].messages.push(newMessage);
             this.newMessage = ''
-          },
+          }, 
+          autoMessage(index){
+            let newMessage={
+              date: this.dateNow,
+              message: 'Ho ricevuto il messaggio',
+              status: 'received'
+            }
+            setTimeout (() =>{
+                this.contacts[index].messages.push(newMessage);
+              },3000)
+            }
+            
           
-    }
+          
+          
+    },
     
 }).mount('#app')
 
