@@ -97,7 +97,7 @@
                         <div class="messageChats" v-for="(message) in user.messages">
                             <div class="message-body" :class="message.status">
                                 <div class="message-text">{{message.message}}</div>
-                                <div class="message-data text-smaller">15:30</div>
+                                <div class="message-data text-smaller">{{message.date}}</div>
                             </div>
                         </div>
                     </div>

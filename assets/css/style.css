@@ -117,11 +117,14 @@ body {
 
  .content {
     width: calc(100% - 70px);
-    overflow-y: auto;
     background-image: url(../img/mine.jpg);
     position: relative; 
     display: none;
 } 
+.chats {
+    overflow-y: auto;
+    height: calc(100% - 135px);
+}
 
 .active  {
     display: block;
@@ -174,7 +177,7 @@ body {
     background-color: white;
     padding: 6px;
     border-radius: 10px;
-    width: 13rem;
+    width: 20rem;
     max-width: 500px;
     overflow-wrap: break-word;
 }
