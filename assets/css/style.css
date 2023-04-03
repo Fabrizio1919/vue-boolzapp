@@ -178,8 +178,9 @@ body {
     overflow-wrap: break-word;
 }
 
-.green {
-    
+.chats .message-body.sent{
+    background-color: rgb(197, 252, 197);
+    margin-left: auto;
 }
 
 
