@@ -161,6 +161,7 @@ body {
     padding: 20px;
     margin: 3px;
     display: flex;
+    flex-direction: column;
 }
 
 .chats .message-body{
@@ -172,6 +173,8 @@ body {
     max-width: 500px;
     overflow-wrap: break-word;
 }
+
+
 
 .chats .message-body .message-data{
     text-align: right;

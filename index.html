@@ -60,14 +60,14 @@
 
                     <div class="sidebar_bottom">
                         <div class="userList">
-                            <div class="user" v-for="(contact,index) in contacts">
+                            <div class="user" :class="index === activeContact ? 'active' : ''" v-for="(contact,index) in contacts">
                                 <div class="profile-img">
                                     <img :src="contact.avatar" alt="">
                                 </div>
                                 <!-- ./profile-img -->
                                 <div class="name-msg">
                                     <div class="name-user">{{contact.name}}</div>
-                                    <div class="last msg text-smal">{{contact.message}}</div>
+                                    <div class="last msg text-smal">Ultimo messaggio</div>
                                 </div>
                                 <!-- ./name-msg -->
                                 <div class="info text-smal">12.00</div>
@@ -77,13 +77,13 @@
                         <!-- ./user.list -->
                     </div>
                 </div>
-                <div class="content">
+                <div class="content" v-for="(user,index) in contacts">
                     <div class="header">
                         <div class="profile-img">
                             <img src="./assets/img/avatar_1.jpg" alt="myImg">
                         </div>
                         <div class="user-name">
-                            <div class="name">Michele</div>
+                            <div class="name">{{user.name}}</div>
                             <div class="text-smal">Ultimo accesso oggi ale 12:00</div>
                         </div>
                         <div class="icons">
@@ -94,9 +94,9 @@
                     </div>
                     <!-- ./HEADER -->
                     <div class="chats">
-                        <div class="messageChats">
-                            <div class="message-body">
-                                <div class="message-text">Tutto fatto</div>
+                        <div class="messageChats" v-for="(message) in user.messages">
+                            <div class="message-body" :class="message.status">
+                                <div class="message-text">{{message.message}}</div>
                                 <div class="message-data text-smaller">15:30</div>
                             </div>
                         </div>
