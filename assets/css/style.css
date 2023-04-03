@@ -115,12 +115,16 @@ body {
 /* ----END SIDER BOTTOM---- */
 
 
- .bar_top > .content {
+ .content {
     width: calc(100% - 70px);
     overflow-y: auto;
     background-image: url(../img/mine.jpg);
     position: relative; 
+    display: none;
 } 
+.active  {
+    display: block;
+}
 
 /* Sidebar TOP */
  .notifyAlert{
@@ -172,6 +176,10 @@ body {
     width: 13rem;
     max-width: 500px;
     overflow-wrap: break-word;
+}
+
+.green {
+    
 }
 
 

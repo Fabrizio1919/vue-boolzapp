@@ -60,7 +60,7 @@
 
                     <div class="sidebar_bottom">
                         <div class="userList">
-                            <div class="user" :class="activeVerify(index)" v-for="(contact,index) in contacts">
+                            <div class="user" :class="activeVerify(index)" v-for="(contact,index) in contacts" @click="selectUser(index)">
                                 <div class="profile-img">
                                     <img :src="contact.avatar" alt="">
                                 </div>
