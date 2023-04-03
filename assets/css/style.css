@@ -37,6 +37,9 @@ body {
     font-size: 14px;
     color: rgb(126, 124, 124);
 }
+.name-msg {
+    flex-grow: 1;
+}
 .text-smaller{
     font-size: 12px;
     color: rgb(126, 124, 124);
@@ -73,6 +76,7 @@ body {
 .bar_top {
     height: calc(100vh - 70px);
     display: flex;
+    padding: 1rem 0;
 }
 
 .bar_top>.sidebar {
