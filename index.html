@@ -78,9 +78,9 @@
                     </div>
                 </div>
                 <div class="content" v-for="(user,index) in contacts" :class="activeVerify(index)">
-                    <div class="header">
+                    <div class="header border-0">
                         <div class="profile-img">
-                            <img src="./assets/img/avatar_1.jpg" alt="myImg">
+                            <img :src="user.avatar" alt="myImg">
                         </div>
                         <div class="user-name">
                             <div class="name">{{user.name}}</div>
