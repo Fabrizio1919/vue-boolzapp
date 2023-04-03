@@ -53,14 +53,14 @@
                     <!-- ./sider_top -->
 
                     <div class="searchBar">
-                        <input type="text" name="searchUser" id="searchUser" placeholder="Cerca o inizia una nuova chat"
+                        <input type="text" name="searchUser" id="searchUser" v-model="searchName" @keyup.enter="filterUser()" placeholder="Cerca o inizia una nuova chat"
                             style="font-family:Arial, FontAwesome;">
                     </div>
                     <!-- /.searchBar -->
 
                     <div class="sidebar_bottom">
                         <div class="userList">
-                            <div class="user" :class="activeVerify(index)" v-for="(contact,index) in contacts" @click="selectUser(index)">
+                            <div class="user" :class="activeVerify(index)" v-for="(contact,index) in contacts" @click="selectUser(index)" v-show="contact.visible">
                                 <div class="profile-img">
                                     <img :src="contact.avatar" alt="">
                                 </div>

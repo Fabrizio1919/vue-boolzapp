@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
             activeContact: 0,
+            searchName:'',
+            newMessage:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -194,7 +196,26 @@ createApp({
             setTimeout (() =>{
                 this.contacts[index].messages.push(newMessage);
               },3000)
+            },
+            /* Creare una funzione che filtri i contatti in base ad un input */
+            filterUser() {
+                /* SE NEL NOME è INCLUSO UNO DEI CARATTERI INSIERITI NEL INPUT, IL CONTATTO AVRA' VISIBILE TRUE  */
+                /* to .toLowerCase() ti permette di trasformare una stringa tutto in minuscolo  */
+                
+                this.contacts.forEach(contact => {
+                   /*  console.log(contact.name);
+                    console.log('Search ' + this.searchName); */
+                    if (contact.name.toLowerCase().includes(this.searchName.toLowerCase())){
+                        contact.visible = true
+                    } else {
+                       contact.visible = false
+                    } 
+                });
+                
             }
+                
+
+
             
           
           
