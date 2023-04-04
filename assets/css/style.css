@@ -80,7 +80,7 @@ body {
 }
 
 .bar_top>.sidebar {
-    width: 50%;
+    width: 65%;
     overflow: hidden;
     background-color: var();
     justify-content: space-between;

@@ -8,6 +8,7 @@ createApp({
             dateNow: DateTime.now().toISO(),
             searchName: '',
             newMessage: '',
+            indiceUltimoMess:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -183,6 +184,9 @@ createApp({
 
         selectUser(index) { this.activeContact = index },
         sendMessage(index) {
+            if(this.newMessage === '') {
+                return
+            }
             let newMessage = {
                 date: this.dataIsoToTime(this.dateNow),
                 message: this.newMessage,
@@ -190,10 +194,11 @@ createApp({
             }
             this.contacts[index].messages.push(newMessage);
             this.newMessage = ''
+            this.autoMessage(index)
         },
         autoMessage(index) {
             let newMessage = {
-                date: this.dateNow,
+                date: this.dataIsoToTime(this.dateNow),
                 message: 'Ho ricevuto il messaggio',
                 status: 'received'
             }
@@ -225,8 +230,13 @@ createApp({
             const lastMessagePosition = message.length - 1;
             console.log('Questo è la data ultimo messaggio' +  message[lastMessagePosition].date);
             return message[lastMessagePosition].date
-
         },
+        ultimoMessaggio() {
+            contacts.forEach(element => {
+                this.indiceUltimoMess = Number((element.messages.length) - 1)
+            });
+        }
+        
 
 
 
