@@ -1,11 +1,13 @@
 const { createApp } = Vue
+const DateTime = luxon.DateTime;
 
 createApp({
     data() {
         return {
             activeContact: 0,
-            searchName:'',
-            newMessage:'',
+            dateNow: DateTime.now().toISO(),
+            searchName: '',
+            newMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -174,55 +176,87 @@ createApp({
     methods: {
         activeVerify(index) {
             if (index === this.activeContact) {
-              return ('active');
+                return ('active');
             }
-          },
-          selectUser(index) { this.activeContact = index },
-          sendMessage(index){
-            let newMessage ={
-              date: this.dateNow,
-              message: this.newMessage,
-              status: 'sent'
+        },
+
+
+        selectUser(index) { this.activeContact = index },
+        sendMessage(index) {
+            let newMessage = {
+                date: this.dataIsoToTime(this.dateNow),
+                message: this.newMessage,
+                status: 'sent'
             }
             this.contacts[index].messages.push(newMessage);
             this.newMessage = ''
-          }, 
-          autoMessage(index){
-            let newMessage={
-              date: this.dateNow,
-              message: 'Ho ricevuto il messaggio',
-              status: 'received'
+        },
+        autoMessage(index) {
+            let newMessage = {
+                date: this.dateNow,
+                message: 'Ho ricevuto il messaggio',
+                status: 'received'
             }
-            setTimeout (() =>{
+            setTimeout(() => {
                 this.contacts[index].messages.push(newMessage);
-              },1000)
-            },
-            /* Creare una funzione che filtri i contatti in base ad un input */
-            
-                
+            }, 1000)
+        },
+
+        dataIsoToTime(dataISO) {
+            return (DateTime.fromISO(dataISO).toFormat('T'));
+        },
+
+        // DETERMINA IL TESTO DELL'ULTIMO MESSAGGIO INVIATO DA UN UTENTE 
+        lastText(contact) {
+            if (contact.messages.length > 0) {
+                return (contact.messages[contact.messages.length - 1].message)
+            } else {
+                return ('Nessun Messaggio.');
+            }
+        },
+        localDate() {
+            console.log(DateTime.now().setLocale('it').toLocaleString(DateTime.DATETIME_SHORT_WITH_SECONDS));
+
+        },
+        // DETERMINA LA DATA DELL'ULTIMO MESSAGGIO INVIATO DA UN UTENTE
+        lastDate(message, index) {
+            // Troviamo l'index dell'ultimo messaggio ossia l'ultimo messaggio dell'array
+            console.log(message.length - 1);
+            const lastMessagePosition = message.length - 1;
+            console.log('Questo è la data ultimo messaggio' +  message[lastMessagePosition].date);
+            return message[lastMessagePosition].date
+
+        },
 
 
-            
-          
-          
-          
+
+
+
+
+
+
+
     },
     computed: {
         filterUser() {
-            /* SE NEL NOME è INCLUSO UNO DEI CARATTERI INSIERITI NEL INPUT, IL CONTATTO AVRA' VISIBILE TRUE  */    
+            /* SE NEL NOME è INCLUSO UNO DEI CARATTERI INSIERITI NEL INPUT, IL CONTATTO AVRA' VISIBILE TRUE  */
             this.contacts.forEach(contact => {
-               /*  console.log(contact.name);
-                console.log('Search ' + this.searchName); */
-                if (contact.name.toLowerCase().includes(this.searchName.toLowerCase())){
+                /*  console.log(contact.name);
+                 console.log('Search ' + this.searchName); */
+                if (contact.name.toLowerCase().includes(this.searchName.toLowerCase())) {
                     contact.visible = true
                 } else {
-                   contact.visible = false
-                } 
+                    contact.visible = false
+                }
             });
-            
         }
 
+        
+
+    }, 
+    mounted(){
+       this.localDate() 
     }
-    
+
 }).mount('#app')
 
