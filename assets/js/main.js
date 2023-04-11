@@ -203,7 +203,7 @@ createApp({
                 status: 'received'
             }
             setTimeout(() => {
-                this.contacts[index].messages.push(newMessage);
+                this.filterUser[index].messages.push(newMessage);
             }, 1000)
         },
 
@@ -250,15 +250,14 @@ createApp({
     computed: {
         filterUser() {
             /* SE NEL NOME è INCLUSO UNO DEI CARATTERI INSIERITI NEL INPUT, IL CONTATTO AVRA' VISIBILE TRUE  */
-            this.contacts.forEach(contact => {
-                /*  console.log(contact.name);
-                 console.log('Search ' + this.searchName); */
-                if (contact.name.toLowerCase().includes(this.searchName.toLowerCase())) {
-                    contact.visible = true
-                } else {
-                    contact.visible = false
-                }
-            });
+            // this.contacts.forEach(contact => {
+            //     if (contact.name.toLowerCase().includes(this.searchName.toLowerCase())) {
+            //         contact.visible = true
+            //     } else {
+            //         contact.visible = false
+            //     }
+            // });
+            return this.contacts.filter( (contact) => contact.name.toLowerCase().includes(this.searchName.toLowerCase()));
         }
 
         
